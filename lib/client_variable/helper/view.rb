@@ -1,3 +1,6 @@
+require 'action_view'
+require 'action_controller'
+
 module Client
   module Helpers
     module View

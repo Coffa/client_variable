@@ -1,4 +1,5 @@
-require "client_variable/version"
+require 'client_variable/version'
+require 'rails/engine'
 
 module Client
 	class Variable
