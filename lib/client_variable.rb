@@ -46,8 +46,8 @@ module Client
 	end
 
 	def self.generate
-		data = YAML.load(ERB.new(File.new("#{Rails.root}/config/client_variable.yml").read).result)[Rails.env]
-		data.merge([Global.values, Request.values].inject(:merge)).to_json
+		data = YAML.load(ERB.new(File.new("#{Rails.root}/config/client_variable.yml").read).result)
+		data[Rails.env].to_json
 	end
 
 	class Engine < ::Rails::Engine; end
