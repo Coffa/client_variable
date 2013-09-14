@@ -47,7 +47,7 @@ Inspired from gon - https://github.com/gazay/gon, you can also do these in your 
 
 Add this line on top of `app/assets/javascripts/application.js`
 ``` js
-//= require variable.js.erb
+//= require variable
 ```
 I also define global variable in javascript `rails`
 Access the varaibles from your JavaScript file:
