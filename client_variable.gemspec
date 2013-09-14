@@ -8,9 +8,9 @@ Gem::Specification.new do |spec|
   spec.version       = ClientVariable::VERSION
   spec.authors       = ["MQuy"]
   spec.email         = ["sugiacupit@gmail.com"]
-  spec.description   = %q{export variable from rails}
+  spec.description   = %q{export variable in rails to client-side}
   spec.summary       = %q{variable rails in client}
-  spec.homepage      = ""
+  spec.homepage      = "https://github.com/MQuy"
   spec.license       = "MIT"
   spec.rubyforge_project = "client_variable"
 

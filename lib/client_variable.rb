@@ -23,6 +23,14 @@ module Client
 				Request.clear
 			end
 
+			def push(data = {})
+				raise "Object must have each_pair method" unless data.respond_to? :each_pair
+
+				data.each_pair do |name, value|
+					set_variable(name.to_s, value)
+				end
+			end
+
 			def method_missing(method, *args, &block)
 				if ( method.to_s =~ /=$/ )
 					if public_methods? method
