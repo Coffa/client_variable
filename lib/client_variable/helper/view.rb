@@ -43,7 +43,7 @@ module Client
         end
 
         def values
-          [Global.values, Request.values].inject(:merge)
+          Client.generate.merge([Global.values, Request.values].inject(:merge))
         end
       end
     end

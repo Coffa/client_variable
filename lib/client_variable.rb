@@ -47,10 +47,10 @@ module Client
 
 	def self.generate
 		data = YAML.load(ERB.new(File.new("#{Rails.root}/config/client_variable.yml").read).result)
-		data[Rails.env].to_json
+		data[Rails.env]
 	end
 
-	class Engine < ::Rails::Engine; end
+	class Engine < Rails::Engine; end
 
 	require 'client_variable/request'
 	require 'client_variable/global'

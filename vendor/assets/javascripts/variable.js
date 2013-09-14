@@ -1,5 +1,5 @@
 rails = (function(exports, global) {
-	var datum = deepMerge(exports, <%= Client.generate%>);
+	var datum = exports;
 	var defaultSeparator = '.';
 
 	function lookup(query, track) {

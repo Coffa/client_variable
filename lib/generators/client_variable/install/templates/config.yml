@@ -1,5 +1,5 @@
 development:
-	x: 1
+  app_name: <%= Rails.application.class.parent_name%>
 
 production:
-	x:1
+  app_name: <%= Rails.application.class.parent_name%>
