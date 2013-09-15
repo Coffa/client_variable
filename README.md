@@ -53,6 +53,9 @@ I also define global variable in javascript `rails`
 Access the varaibles from your JavaScript file:
 
 ``` js
-rails.set('a.b.c.d', '123') # rails.values => {a: {b: {c: {d: '123'}}}}
-rails.get('a.b.c.d') # => '123'
+rails.get('variable_name') // => variable_value
+rails.get('user_id') // => 1
+
+rails.set('a.b.c.d', '123') // rails.values => {a: {b: {c: {d: '123'}}}}
+rails.get('a.b.c.d') // => '123'
 ```
