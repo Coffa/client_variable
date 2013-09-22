@@ -14,6 +14,15 @@ After you install and add it to your Gemfile, you need to run the generator:
 
 It will create client_variable.yml in config folder, these variable in this file will be merged with variables defined through controller, exported to client-side
 
+####client_variable.yml
+``` ruby
+development:
+  app_name: <%= Rails.application.class.parent_name%>
+
+production:
+  app_name: <%= Rails.application.class.parent_name%>
+```
+
 ## Usage
 
 Add this line to `app/views/layouts/application.html.erb`
