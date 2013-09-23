@@ -41,4 +41,4 @@ rails = (function(exports, global) {
 		},
 		values: datum
 	}
-}(rails || {}, this));
+}(typeof rails === 'undefined' ? {} : rails, this));
