@@ -1,6 +1,6 @@
 require "action_controller/railtie"
 
-module Client
+module ClientVariable
 	class Railtie < ::Rails::Railtie
 		rake_tasks do
       load "client_variable/rails/task.rake"

@@ -1,4 +1,4 @@
-module Client
+module ClientVariable
 	class Global < Variable
 		class << self
 			def values

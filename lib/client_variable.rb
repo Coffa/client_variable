@@ -1,7 +1,7 @@
 require 'client_variable/version'
 require 'rails/engine'
 
-module Client
+module ClientVariable
 	class Variable
 		class << self
 			def global

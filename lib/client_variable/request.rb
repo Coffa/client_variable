@@ -1,4 +1,4 @@
-module Client
+module ClientVariable
   class Request
     class << self
       def env

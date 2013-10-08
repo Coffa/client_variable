@@ -1,4 +1,4 @@
-module Client
+module ClientVariable
   module Helpers
     module Instance
       def self.included base
@@ -23,4 +23,4 @@ module Client
   end
 end
 
-ActionController::Base.send :include, Client::Helpers::Instance
+ActionController::Base.send :include, ClientVariable::Helpers::Instance

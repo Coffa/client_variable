@@ -1,7 +1,7 @@
 require 'action_view'
 require 'action_controller'
 
-module Client
+module ClientVariable
   module Helpers
     module View
       extend ActionView::Helpers::JavaScriptHelper
@@ -43,11 +43,11 @@ module Client
         end
 
         def values
-          Client.generate.merge([Global.values, Request.values].inject(:merge))
+          ClientVariable.generate.merge([Global.values, Request.values].inject(:merge))
         end
       end
     end
   end
 end
 
-ActionView::Base.send :include, Client::Helpers::View
+ActionView::Base.send :include, ClientVariable::Helpers::View

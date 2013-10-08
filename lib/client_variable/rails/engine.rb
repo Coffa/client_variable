@@ -1,7 +1,7 @@
 require 'sprockets/engines'
 require 'tilt/template'
 
-module Client
+module ClientVariable
 	class Engine < Rails::Engine
 		initializer "sprockets.mquy", :after => "sprockets.environment", :group => :all do |app|
 			app.assets.register_engine('.mquy', TiltHandlebars)
@@ -31,5 +31,5 @@ module Client
   end
 end
 
-Tilt.register 'mquy',               Client::TiltHandlebars
-Sprockets.register_engine '.mquy',  Client::TiltHandlebars
+Tilt.register 'mquy',               ClientVariable::TiltHandlebars
+Sprockets.register_engine '.mquy',  ClientVariable::TiltHandlebars
