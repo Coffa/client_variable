@@ -47,10 +47,11 @@ module Client
 
 	def self.generate
 		path = "#{Rails.root}/config/client_variable.yml"
-		config = if File.exist?(path)
+		if File.exist?(path)
 			data = YAML.load(ERB.new(File.new("#{Rails.root}/config/client_variable.yml").read).result)
-			data[Rails.env]
-		end || {}
+			config = data[Rails.env]
+		end
+		config || {}
 	end
 
 	class Engine < Rails::Engine; end

@@ -1,4 +1,6 @@
 rails = (function(exports, global) {
+	'use strict';
+
 	var datum = exports;
 	var defaultSeparator = '.';
 

@@ -19,7 +19,7 @@ module Client
       end
 
       def values
-        env.blank? ? {} : env['client']
+        env && env['client'] ? env['client'] : {}
       end
 
       def clear
