@@ -43,13 +43,6 @@ module ClientVariable
         end
 
         def values
-          puts ClientVariable
-          puts '----------------'
-          puts ClientVariable.generate
-          puts '----------------'
-          puts Global.values
-          puts '----------------'
-          puts Request.values
           ClientVariable.generate.merge([Global.values, Request.values].inject(:merge))
         end
       end
