@@ -6,6 +6,8 @@ module ClientVariable
       end
 
       module InstanceMethods
+        before_filter :client
+
         def client
           if new_request?
             Request.id = request.object_id
