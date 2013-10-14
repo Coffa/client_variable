@@ -3,11 +3,13 @@ module ClientVariable
     module Instance
       def self.included base
         base.send(:include, InstanceMethods)
+        base.class_eval do
+          before_filter :client
+        end
+
       end
 
       module InstanceMethods
-        before_filter :client
-
         def client
           if new_request?
             Request.id = request.object_id
