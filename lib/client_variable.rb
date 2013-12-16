@@ -2,6 +2,10 @@ require 'client_variable/version'
 require 'rails/engine'
 
 module ClientVariable
+  def self.❨╯°□°❩╯︵┻━┻
+    puts "Calm down, bro"
+  end
+
 	class Variable
 		class << self
 			def global
@@ -48,7 +52,7 @@ module ClientVariable
 	def self.generate
 		path = "#{Rails.root}/config/client_variable.yml"
 		if File.exist?(path)
-			data = YAML.load(ERB.new(File.new("#{Rails.root}/config/client_variable.yml").read).result)
+			data = YAML.load(ERB.new(File.new(path).read).result)
 			config = data[Rails.env]
 		end
 		config || {}

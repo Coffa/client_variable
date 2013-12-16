@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 gemspec
 
-gem 'rails'
+gem 'rails', '~> 3.0.0'
 
 group :test do
 	gem 'coveralls', :require => false
@@ -10,6 +10,7 @@ group :test do
 	gem 'rspec'
 	gem 'rspec-rails'
 	gem 'simplecov', :require => false
+	gem 'mocha'
 end
 
 group :development, :test do
