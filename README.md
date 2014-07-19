@@ -68,3 +68,12 @@ rails.get('user_id') // => 1
 rails.set('a.b.c.d', '123') // rails.values => {a: {b: {c: {d: '123'}}}}
 rails.get('a.b.c.d') // => '123'
 ```
+
+### Options
+
+#### :camel_case
+
+``` erb
+include_variable(:camel_case => true) // => rails.values => {appName: 'Hello World'}
+include_variable(:camel_case => false) // => rails.values => {app_name: 'Hello World'}
+```
