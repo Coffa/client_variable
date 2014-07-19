@@ -12,34 +12,42 @@ module ClientVariable
       end
 
       module InstanceMethods
-        def include_variable
-          render_data
+        def include_variable(opts={})
+          render_data(opts)
         end
 
         private
-        def render_data
-          script  = "window.rails = {};"
-          script << formatted_data
+        def render_data(opts)
+          camel_case = opts[:camel_case].nil? ? true : opts[:camel_case]
+
+          script = "window.rails = {};"
+          script << formatted_data(camel_case)
           script = javascript_tag(script)
           script.html_safe
         end
 
-        def formatted_data
+        def formatted_data(camel_case)
           script = ''
           values.each do |key, val|
-            js_key = key.to_s.camelize(:lower)
-            script << "rails.#{js_key}=#{normalize(val).to_json};"
+            js_key = camel_case ? key.to_s.camelize(:lower) : key.to_s
+            script << "rails.#{js_key}=#{normalize(val, camel_case).to_json};"
           end
           script
         end
 
-        def normalize(value, depth=0)
+        def normalize(value, camel_case, depth=0)
           return value if depth > 1000
-          return value unless value.is_a? Hash
 
-          Hash[value.map { |k, v|
-            [ k.to_s.camelize(:lower), normalize(v, depth + 1) ]
-          }]
+          case value
+            when Hash
+              Hash[value.map { |k, v|
+                [ camel_case ? k.to_s.camelize(:lower) : k.to_s, normalize(v, camel_case, depth + 1) ]
+              }]
+            when Enumerable
+              value.map { |v| normalize(v, camel_case, depth) }
+            else
+              value
+          end
         end
 
         def values

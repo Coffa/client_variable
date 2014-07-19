@@ -10,25 +10,16 @@ rails = (function(exports, global) {
 				messages = datum;
 		while(messages) {
 			part = parts.shift();
-			if (parts.length == 0) break;
+			if (!parts.length) break;
 			if (track && !messages[parts]) messages[part] = {};
 			messages = messages[part];
 		}
 		return messages;
 	}
 
-	function deepMerge(target, source) {
-		for(var key in source) {
-			if (source.hasOwnProperty(key)) {
-				target[key] = source[key];
-			}
-		}
-		return target;
-	}
-
 	function separateQuery(query, n) {
 		var parts = query.split(defaultSeparator);
-		if (n < 0) n += parts.length
+		if (n < 0) { n += parts.length; }
 		return n ? parts[n] : parts;
 	}
 
@@ -42,5 +33,5 @@ rails = (function(exports, global) {
 			return (parent = lookup(name)) ? parent[separateQuery(name, -1)] : parent;
 		},
 		values: datum
-	}
+	};
 }(typeof rails === 'undefined' ? {} : rails, this));
