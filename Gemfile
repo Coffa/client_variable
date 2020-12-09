@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 gemspec
 
-gem 'rails', '~> 3.0.0'
+gem 'rails', '~> 6.1.0'
 
 group :test do
   gem 'coveralls', :require => false
